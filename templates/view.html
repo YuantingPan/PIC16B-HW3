@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href= {{ url_for("static",filename="css/main.css") }} >
+{% block header %}
+  <h1>{% block title %}Some Cool Messages{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+{% for key, item in messages.iterrows() %}
+      <br> 
+      "{{ item["message"] }} "
+      <br>
+      <i>&nbsp&nbsp-- {{ item["handle"] }}</i>
+      <br>
+{% endfor %}
+{% endblock %}
