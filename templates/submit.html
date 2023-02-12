@@ -8,16 +8,16 @@
   <form method="post">
       <label for="message">Your message</label>
       <input name="message" id="message">
-      <br>
+      <br><br>
       <label for="name">Your name</label>
       <input name="name" id="name">
-      <br>
+      <br><br>
       <input type="submit" value="Submit form">
   </form>
   <br>
   {% if name %}
-  Hello {{name}}! Thank you for submitting!
+  Hello <strong>{{name}}</strong>! Thank you for submitting!
   <br>
-  Check <a href="/messages">here</a> to see the messages people left!
+  Check <a href="/messages"><b>HERE</b></a> to see the messages people left!
   {% endif %}
 {% endblock %}
