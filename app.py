@@ -24,8 +24,10 @@ def get_message_db():
 
 
 def insert_message(request):
+    # Get submission variables from submit.html
     message = request.form["message"]
     name = request.form["name"]
+    
     conn = g.message_db
     cursor = conn.cursor()
     # Get the length of database, and let the number be the next ID. (ID starts from zero)
@@ -54,7 +56,7 @@ def submit():
         return render_template("submit.html", name = request.form["name"])
 
 
-@app.route("/messages")
+@app.route("/view")
 def view():
     # Display 5 random messages
     m = random_messages(5)

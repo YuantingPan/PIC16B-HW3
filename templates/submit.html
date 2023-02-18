@@ -1,10 +1,16 @@
 <link rel="stylesheet" type="text/css" href= {{ url_for("static",filename="css/main.css") }} >
 
 {% block header %}
-  <h1>{% block title %}Submit Your Message!{% endblock %}</h1>
+  <h1>{% block title %}A Simple Message Bank{% endblock %}</h1>
+  <a href="./">Submit Your Message</a>
+  <br><br>
+  <a href="./view">View Random Messages</a>
 {% endblock %}
 
 {% block content %}
+
+  <h1>Submit your message here!</h1>
+
   <form method="post">
       <label for="message">Your message</label>
       <input name="message" id="message">
@@ -18,6 +24,6 @@
   {% if name %}
   Hello <strong>{{name}}</strong>! Thank you for submitting!
   <br>
-  Check <a href="/messages"><b>HERE</b></a> to see the messages people left!
+  Check <a href="/view"><b>HERE</b></a> to see the messages people left!
   {% endif %}
 {% endblock %}
